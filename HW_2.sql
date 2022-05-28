@@ -1,12 +1,13 @@
---SQL_DDL
---Первая часть.
---
---Таблица employees
---
---Создать таблицу employees
---- id. serial,  primary key,
---- employee_name. Varchar(50), not null
---Наполнить таблицу employee 70 строками.
+-- SQL_DDL
+-- РџРµСЂРІР°СЏ С‡Р°СЃС‚СЊ.
+
+-- РўР°Р±Р»РёС†Р° employees
+
+-- РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ employees
+-- - id. serial,  primary key,
+-- - employee_name. Varchar(50), not null
+-- РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ employee 70 СЃС‚СЂРѕРєР°РјРё.
+
 
 create table employees(
 	id serial primary key,
@@ -45,7 +46,7 @@ values (default, 'Simmons Daniel'),
 	   (default, 'Henderson Frank'),
 	   (default, 'Barnett Frederick'),
 	   (default, 'Boyd Joshua'),
-	   (default, 'McGee Williamя'),
+	   (default, 'McGee WilliamГї'),
 	   (default, 'Scott Joseph'),
 	   (default, 'Hudson Peter'),
 	   (default, 'Marsh Isaac'),
@@ -87,21 +88,21 @@ values (default, 'Simmons Daniel'),
 	   (default, 'Shepherd Johnnn');
 	  
 	  
---Таблица salary
---
---Создать таблицу salary
---- id. Serial  primary key,
---- monthly_salary. Int, not null
---Наполнить таблицу salary 15 строками:
+-- РўР°Р±Р»РёС†Р° salary
+
+-- РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ salary
+-- - id. Serial  primary key,
+-- - monthly_salary. Int, not null
+-- РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ salary 15 СЃС‚СЂРѕРєР°РјРё:
 
 	  
-create table salary198(
+create table salary(
 	id serial primary key,
 	monthly_salary int not null
 );
-select * from salary198;
+select * from salary;
 
-insert into salary198 (id, monthly_salary)
+insert into salary (id, monthly_salary)
 values (default, 1000),
        (default, 1100),
        (default, 1200),
@@ -119,14 +120,15 @@ values (default, 1000),
        (default, 2400),
        (default, 2500);
       
---Таблица employee_salary
---
---Создать таблицу employee_salary
---- id. Serial  primary key,
---- employee_id. Int, not null, unique
---- salary_id. Int, not null
---Наполнить таблицу employee_salary 40 строками:
---- в 10 строк из 40 вставить несуществующие employee_id
+-- РўР°Р±Р»РёС†Р° employee_salary
+
+-- РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ employee_salary
+-- - id. Serial  primary key,
+-- - employee_id. Int, not null, unique
+-- - salary_id. Int, not null
+-- РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ employee_salary 40 СЃС‚СЂРѕРєР°РјРё:
+-- - РІ 10 СЃС‚СЂРѕРє РёР· 40 РІСЃС‚Р°РІРёС‚СЊ РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРµ employee_id
+
 
        
 create table employee_salary(
@@ -138,66 +140,66 @@ select * from employee_salary;
 
 insert into employee_salary(employee_id, salary_id)
 values (30, 16),
-(29, 15),
-(28, 14),
-(27, 13),
-(26, 12),
-(25, 11),
-(24, 10),
-(23, 9),
-(22, 8),
-(21, 7),
-(20, 6),
-(19, 5),
-(18, 4),
-(17, 3),
-(16, 2),
-(15, 1),
-(14, 15),
-(13, 14),
-(12, 13),
-(11, 12),
-(10, 11),
-(9, 10),
-(8, 9),
-(7, 8),
-(6, 7),
-(5, 6),
-(4, 5),
-(3, 4),
-(2, 3),
-(1, 2),
-(71, 1),
-(72, 2),
-(73, 3),
-(74, 4),
-(75, 5),
-(76, 6),
-(77, 7),
-(78, 8),
-(79, 9),
-(80, 10);
+       (29, 15),
+       (28, 14),
+       (27, 13),
+       (26, 12),
+       (25, 11),
+       (24, 10),
+       (23, 9),
+       (22, 8),
+       (21, 7),
+       (20, 6),
+       (19, 5),
+       (18, 4),
+       (17, 3),
+       (16, 2),
+       (15, 1),
+       (14, 15),
+       (13, 14),
+       (12, 13),
+       (11, 12),
+       (10, 11),
+       (9, 10),
+       (8, 9),
+       (7, 8),
+       (6, 7),
+       (5, 6),
+       (4, 5),
+       (3, 4),
+       (2, 3),
+       (1, 2),
+       (71, 1),
+       (72, 2),
+       (73, 3),
+       (74, 4),
+       (75, 5),
+       (76, 6),
+       (77, 7),
+       (78, 8),
+       (79, 9),
+       (80, 10);
 
---Таблица roles
---
---Создать таблицу roles
---- id. Serial  primary key,
---- role_name. int, not null, unique
---Поменять тип столба role_name с int на varchar(30)
---Наполнить таблицу roles 20 строками:
+-- РўР°Р±Р»РёС†Р° roles
+
+-- РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ roles
+-- - id. Serial  primary key,
+-- - role_name. int, not null, unique
+-- РџРѕРјРµРЅСЏС‚СЊ С‚РёРї СЃС‚РѕР»Р±Р° role_name СЃ int РЅР° varchar(30)
+-- РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ roles 20 СЃС‚СЂРѕРєР°РјРё:
 
 
-create table roles198(
+create table roles(
 	id serial primary key,
 	role_name int unique not null
 );
 
-select * from roles198;
+select * from roles;
 
-alter table roles198
+alter table roles
 alter column role_name type varchar(30);
 
-insert into roles198 (id, role_name)
+insert into roles (id, role_name)
 values (default, 'Junior Python developer'),
 	   (default, 'Middle Python developer'),
 	   (default, 'Senior Python developer'),
@@ -219,13 +221,13 @@ values (default, 'Junior Python developer'),
 	   (default, 'Senior Automation QA engineer'),
 	   (default, 'Project Manager');
 
---Таблица roles_employee
---
---Создать таблицу roles_employee
---- id. Serial  primary key,
---- employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
---- role_id. Int, not null (внешний ключ для таблицы roles, поле id)
---Наполнить таблицу roles_employee 40 строками:
+-- РўР°Р±Р»РёС†Р° roles_employee
+
+-- РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ roles_employee
+-- - id. Serial  primary key,
+-- - employee_id. Int, not null, unique (РІРЅРµС€РЅРёР№ РєР»СЋС‡ РґР»СЏ С‚Р°Р±Р»РёС†С‹ employees, РїРѕР»Рµ id)
+-- - role_id. Int, not null (РІРЅРµС€РЅРёР№ РєР»СЋС‡ РґР»СЏ С‚Р°Р±Р»РёС†С‹ roles, РїРѕР»Рµ id)
+-- РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ roles_employee 40 СЃС‚СЂРѕРєР°РјРё:
 	  
 	  
 create table roles_employee (
@@ -242,45 +244,45 @@ select * from roles_employee;
 
 insert into roles_employee (employee_id, role_id)
 values (40, 20),
-(39, 19),
-(38, 18),
-(37, 17),
-(36, 16),
-(35, 15),
-(34, 14),
-(33, 13),
-(32, 12),
-(31, 11),
-(30, 10),
-(29, 9),
-(28, 8),
-(27, 7),
-(26, 6),
-(25, 5),
-(24, 4),
-(23, 3),
-(22, 2),
-(21, 1),
-(20, 1),
-(19, 2),
-(18, 3),
-(17, 4),
-(16, 5),
-(15, 6),
-(14, 7),
-(13, 8),
-(12, 9),
-(11, 10),
-(10, 11),
-(9, 12),
-(8, 13),
-(7, 14),
-(6, 15),
-(5, 16),
-(4, 17),
-(3, 18),
-(2, 19),
-(1, 20);
+       (39, 19),
+       (38, 18),
+       (37, 17),
+       (36, 16),
+       (35, 15),
+       (34, 14),
+       (33, 13),
+       (32, 12),
+       (31, 11),
+       (30, 10),
+       (29, 9),
+       (28, 8),
+       (27, 7),
+       (26, 6),
+       (25, 5),
+       (24, 4),
+       (23, 3),
+       (22, 2),
+       (21, 1),
+       (20, 1),
+       (19, 2),
+       (18, 3),
+       (17, 4),
+       (16, 5),
+       (15, 6),
+       (14, 7),
+       (13, 8),
+       (12, 9),
+       (11, 10),
+       (10, 11),
+       (9, 12),
+       (8, 13),
+       (7, 14),
+       (6, 15),
+       (5, 16),
+       (4, 17),
+       (3, 18),
+       (2, 19),
+       (1, 20);
 
 
 
